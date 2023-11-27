@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
     $res = array(
-        'msg' => 'Hello, World'
+        'msg' => 'Hello, World!!!'
     );
 }else{
     http_response_code(405);
