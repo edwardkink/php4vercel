@@ -2,20 +2,10 @@
 
 $channelAccessToken = '0a529ee9559bd50bfadea09e09b9d24c';
 $password = '54kink';      // user login password
-$dbFilePath = 'line-db.json';        // user info database file path
-
-if (!file_exists($dbFilePath)) {
-   file_put_contents($dbFilePath, json_encode(['user' => []]));
-}
-$db = json_decode(file_get_contents($dbFilePath), true);
 
 $bodyMsg = file_get_contents('php://input');
 
-file_put_contents('log.txt', date('Y-m-d H:i:s') . 'Recive: ' . $bodyMsg);
-
 $obj = json_decode($bodyMsg, true);
-
-file_put_contents('log.txt', print_r($db, true));
 
 foreach ($obj['events'] as &$event) {
 
@@ -28,7 +18,6 @@ foreach ($obj['events'] as &$event) {
                'userId' => $userId,
                'timestamp' => $event['timestamp']
            ];
-           file_put_contents($dbFilePath, json_encode($db));
            $message = 'Login Success! Wellcome!';
        } else {
            $message = 'Input password please.';
@@ -36,7 +25,6 @@ foreach ($obj['events'] as &$event) {
    } else {
        if (strtolower($event['message']['text']) === 'bye') {
            unset($db['user'][$userId]);
-           file_put_contents($dbFilePath, json_encode($db));
            $message = 'bye';
        } else {
            $message = 'Already logged in. You can send \'bye\' to logout.';
