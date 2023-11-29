@@ -18,7 +18,7 @@ foreach ($obj['events'] as &$event) {
                'userId' => $userId,
                'timestamp' => $event['timestamp']
            ];
-           $message = "Login Success! Wellcome!\n userId:$userId";
+           $message = "Login Success! Wellcome!";
        } else {
            $message = 'Input password please.';
        }
