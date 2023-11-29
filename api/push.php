@@ -1,7 +1,7 @@
 <?php
 
 $channelAccessToken = 'zZt3Oq6HAHiv/00n3nMgfAyz4szQZl10OkLuHwTpMmKYzYdumkGe5/dG7i9+W+a7cOLMieegQ+dWDrY830FMGVRlcLzMwvaxogCcyd/SoZXe5PDLgsK+0IWzuRNoyJdSN0UnxanTypx1K20l2nmpdQdB04t89/1O/w1cDnyilFU=';
-$userIds = ['U19f1b2bb84dfb7d28cadaeb78d332086'];
+$userIds = [];
 $message = isset($argv[1]) ? $argv[1] : 'Hello!';
 
 // make payload
