@@ -1,24 +1,8 @@
 <?php
 
 $channelAccessToken = 'zZt3Oq6HAHiv/00n3nMgfAyz4szQZl10OkLuHwTpMmKYzYdumkGe5/dG7i9+W+a7cOLMieegQ+dWDrY830FMGVRlcLzMwvaxogCcyd/SoZXe5PDLgsK+0IWzuRNoyJdSN0UnxanTypx1K20l2nmpdQdB04t89/1O/w1cDnyilFU=';
-$userIds = [];
+$userIds = ['U19f1b2bb84dfb7d28cadaeb78d332086'];
 $message = isset($argv[1]) ? $argv[1] : 'Hello!';
-$dbFilePath = __DIR__ . '/line-db.json';  // user info database file path
-
-// open json database
-if (!file_exists($dbFilePath)) {
-   file_put_contents($dbFilePath, json_encode(['user' => []]));
-}
-$db = json_decode(file_get_contents($dbFilePath), true);
-
-if (count($db['user']) === 0) {
-   echo 'No user login.';
-   exit(1);
-} else {
-   foreach ($db['user'] as &$userInfo) {
-       $userIds[] = $userInfo['userId'];
-   }
-}
 
 // make payload
 $payload = [
