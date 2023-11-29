@@ -1,6 +1,6 @@
 <?php
 
-$channelAccessToken = '0a529ee9559bd50bfadea09e09b9d24c';
+$channelAccessToken = 'zZt3Oq6HAHiv/00n3nMgfAyz4szQZl10OkLuHwTpMmKYzYdumkGe5/dG7i9+W+a7cOLMieegQ+dWDrY830FMGVRlcLzMwvaxogCcyd/SoZXe5PDLgsK+0IWzuRNoyJdSN0UnxanTypx1K20l2nmpdQdB04t89/1O/w1cDnyilFU=';
 $password = '54kink';      // user login password
 
 $bodyMsg = file_get_contents('php://input');
