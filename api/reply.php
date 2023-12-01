@@ -6,7 +6,7 @@ $password = '54kink';      // user login password
 $bodyMsg = file_get_contents('php://input');
 
 $obj = json_decode($bodyMsg, true);
-
+print_r($obj);
 foreach ($obj['events'] as &$event) {
 
    $userId = $event['source']['userId'];
